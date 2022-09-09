@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "proto.generated";
+
+service ChatHistoryService{
+    rpc GetChatHistory(ChatHistoryRequest) returns (stream ChatHistoryReply);
+}
+message ChatHistoryRequest{
+    int32 user_id = 1;
+}
+message ChatHistoryReply{
+    int32 chat_id = 1;
+    string name = 2;
+    int32 account_id = 3;
+}
+
